@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>RESET by Embody — A full-day experience</title>
 <meta name="description" content="RESET by Embody. A phone-free day of play, movement and connection at a quinta in nature near Lisbon, co-created with Epic Llama. Sunday 8 November.">
-<meta name="theme-color" content="#FF5A1F">
+<meta name="theme-color" content="#B31E8D">
 <meta property="og:title" content="RESET by Embody">
 <meta property="og:description" content="A phone-free day of play, movement and connection at a quinta in nature near Lisbon. Sunday 8 November.">
 <meta property="og:image" content="https://llama-labs.github.io/reset/assets/img/og.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FF5A1F'/%3E%3Cg fill='%23121211'%3E%3Crect x='14' y='15' width='36' height='8' rx='2'/%3E%3Crect x='14' y='28' width='26' height='8' rx='2'/%3E%3Crect x='14' y='41' width='36' height='8' rx='2'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B31E8D'/%3E%3Cg fill='%23121211'%3E%3Crect x='14' y='15' width='36' height='8' rx='2'/%3E%3Crect x='14' y='28' width='26' height='8' rx='2'/%3E%3Crect x='14' y='41' width='36' height='8' rx='2'/%3E%3C/g%3E%3C/svg%3E">
 <style>
 @font-face{font-family:"Bricolage";src:url(assets/fonts/bricolage.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
 @font-face{font-family:"Instrument Serif";src:url(assets/fonts/instrument-serif-italic.woff2) format("woff2");font-style:italic;font-weight:400;font-display:swap}
 
 :root{
-  --paper:#F6F6F3; --ink:#121211; --orange:#FF5A1F; --cobalt:#2E3BFF; --lime:#D7FF45; --pink:#FFB9DF; --green:#0F7A45; --white:#fff;
+  --paper:#F6F6F3; --ink:#121211; --orange:#B31E8D; --cobalt:#00A89C; --lime:#CAE7DC; --pink:#E8BBAE; --green:#00877D; /* Embody: magenta, teal, mint, blush (+ a deeper teal) */ --white:#fff;
   --pad:clamp(16px,4vw,56px);
   --radius:28px;
   --spring:cubic-bezier(.34,1.56,.64,1);
@@ -195,7 +195,7 @@ html.js .stack{transition:transform 1s var(--spring) .55s,opacity .5s .55s}
 @keyframes breeze{50%{transform:rotate(1.6deg)}}
 .nt-sun{transform-origin:50% 50%;transition:transform .5s var(--spring)}
 .nt-rays{transform-origin:50% 50%;animation:spin 14s linear infinite}
-.leaf{fill:#D7FF45;stroke:#121211;stroke-width:2;opacity:0;transform-origin:50% 50%;animation:leaf 5.4s ease-in infinite}
+.leaf{fill:#CAE7DC;stroke:#121211;stroke-width:2;opacity:0;transform-origin:50% 50%;animation:leaf 5.4s ease-in infinite}
 .leaves g:nth-child(2) .leaf{animation-delay:1.8s}
 .leaves g:nth-child(3) .leaf{animation-delay:3.6s}
 @keyframes leaf{0%{opacity:0;transform:translate(0,0) rotate(0)}12%{opacity:1}50%{transform:translate(-14px,38px) rotate(140deg)}88%{opacity:1}100%{opacity:0;transform:translate(8px,76px) rotate(280deg)}}
@@ -268,10 +268,10 @@ html.js .stack{transition:transform 1s var(--spring) .55s,opacity .5s .55s}
 .polaroid figcaption{font-family:var(--serif);font-style:italic;font-size:1.2rem;padding:9px 4px 13px;text-align:center}
 
 /* ---------- tickets ---------- */
-.tickets{background:var(--cobalt);color:var(--white);padding:clamp(80px,10vw,140px) var(--pad)}
-.tickets .kicker::before{background:var(--lime)}
+.tickets{background:var(--cobalt);color:var(--ink);padding:clamp(80px,10vw,140px) var(--pad)}
+.tickets .kicker::before{background:var(--white)}
 .tickets-head{max-width:1100px;margin:0 auto clamp(34px,4vw,54px)}
-.ticket{position:relative;display:grid;grid-template-columns:1.55fr 1fr;max-width:1100px;margin:0 auto;background:var(--paper);color:var(--ink);border-radius:26px;box-shadow:0 34px 60px -24px rgba(0,0,40,.55);transform:rotate(-1deg);transition:transform .6s var(--spring)}
+.ticket{position:relative;display:grid;grid-template-columns:1.55fr 1fr;max-width:1100px;margin:0 auto;background:var(--paper);color:var(--ink);border-radius:26px;box-shadow:0 34px 60px -24px rgba(0,40,36,.45);transform:rotate(-1deg);transition:transform .6s var(--spring)}
 .ticket:hover{transform:rotate(0) scale(1.005)}
 .t-main{padding:clamp(26px,4vw,54px)}
 .t-main .kicker::before{background:var(--orange)}
@@ -314,7 +314,7 @@ html.js .stack{transition:transform 1s var(--spring) .55s,opacity .5s .55s}
 /* ---------- final ---------- */
 
 /* ---------- footer ---------- */
-.foot{background:var(--orange);color:var(--ink);padding:clamp(44px,6vw,84px) var(--pad) max(26px,env(safe-area-inset-bottom))}
+.foot{background:var(--orange);color:var(--white);padding:clamp(44px,6vw,84px) var(--pad) max(26px,env(safe-area-inset-bottom))}
 .foot-logo{-webkit-tap-highlight-color:transparent}
 .foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;margin-top:clamp(26px,4vw,50px);font-weight:650;font-size:.95rem}
 .foot-row a{text-decoration:none;border-bottom:2px solid currentColor}
@@ -486,12 +486,11 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
 @media (hover:hover){.inc:hover svg{transform:rotate(-8deg) scale(1.08)}}
 .inc h3{font-size:1.3rem;font-weight:750;letter-spacing:-.015em;line-height:1.15}
 .inc p{font-size:.98rem;line-height:1.45;color:#4d4d47}
-.inc-food{background:#E76E48;border-color:#E76E48;color:var(--white)}
-.inc-food p{color:rgba(255,255,255,.9)}
-.inc-logo{width:92px;height:auto;margin-bottom:10px}
+.inc-food{background:var(--white);border:2px solid #DA8943}
+.inc-logo{width:160px;height:auto;margin-bottom:14px}
 .inc-note{margin-top:22px;font-size:.98rem;color:#55554f}
 @media(max-width:999px){.inc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:560px){.inc-grid{grid-template-columns:1fr;gap:10px}.inc{display:grid;grid-template-columns:38px 1fr;gap:2px 14px;padding:16px 18px}.inc svg{grid-row:1 / 3;width:36px;height:36px;margin:0}.inc h3{font-size:1.12rem;align-self:end}.inc p{font-size:.93rem}.inc-food{display:flex}.inc-food h3{align-self:auto}.inc-logo{width:80px;margin-bottom:6px}}
+@media(max-width:560px){.inc-grid{grid-template-columns:1fr;gap:10px}.inc{display:grid;grid-template-columns:38px 1fr;gap:2px 14px;padding:16px 18px}.inc svg{grid-row:1 / 3;width:36px;height:36px;margin:0}.inc h3{font-size:1.12rem;align-self:end}.inc p{font-size:.93rem}.inc-food{display:flex}.inc-food h3{align-self:auto}.inc-logo{width:140px;margin-bottom:8px}}
 /* Venue: a small photo mosaic of the outdoor spaces */
 .venue{padding:clamp(60px,8vw,110px) var(--pad) clamp(20px,3vw,40px)}
 .venue-copy{margin-top:16px;font-size:clamp(1.05rem,1.4vw,1.25rem);line-height:1.45;max-width:44ch}
@@ -514,12 +513,13 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
 .faq details p{padding:0 0 22px;max-width:62ch;font-size:1.05rem;line-height:1.55;color:#3d3d38}
 /* Food partner band, in Boali's own orange */
 .food{padding:0 var(--pad) clamp(60px,8vw,100px)}
-.food-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:clamp(24px,4vw,56px);background:#E76E48;color:var(--white);border-radius:26px;padding:clamp(28px,4vw,48px)}
-.food .kicker::before{background:var(--white)}
-.food-logo{width:clamp(150px,18vw,220px);height:auto}
+.food-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:clamp(24px,4vw,56px);background:var(--white);color:var(--ink);border:2px solid #DA8943;border-radius:26px;padding:clamp(28px,4vw,48px)}
+.food .kicker::before{background:#DA8943}
+.food-title .serif{color:#DA8943}
+.food-logo{width:clamp(220px,26vw,320px);height:auto}
 .food-title{font-size:clamp(2rem,4.4vw,3.6rem);font-weight:800;font-stretch:75%;line-height:.95;letter-spacing:-.02em;margin:10px 0 12px}
-.food p{font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.45;max-width:46ch;color:rgba(255,255,255,.92)}
-@media(max-width:699px){.food-in{grid-template-columns:1fr;gap:18px}.food-logo{width:140px}}
+.food p{font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.45;max-width:46ch;color:#3d3d38}
+@media(max-width:699px){.food-in{grid-template-columns:1fr;gap:18px}.food-logo{width:220px}}
 /* Frisbee: thrown from "reset." in the hero, flies and spins as you scroll, then fades */
 .frisbee{position:fixed;left:0;top:0;z-index:40;width:clamp(46px,4.6vw,64px);aspect-ratio:1;pointer-events:none;opacity:0;transition:opacity .4s;will-change:transform,opacity}
 html:not(.js) .frisbee{display:none}
@@ -538,7 +538,7 @@ html:not(.js) .frisbee{display:none}
 .q cite{font-style:normal;font-weight:700;font-size:.9rem}
 .q-lime{background:var(--lime);transform:rotate(-1.2deg)}
 .q-pink{background:var(--pink);transform:rotate(1deg)}
-.q-cobalt{background:var(--cobalt);color:var(--white);transform:rotate(-.6deg)}
+.q-cobalt{background:var(--cobalt);color:var(--ink);transform:rotate(-.6deg)}
 @media (hover:hover){.q:hover{transform:rotate(0) translateY(-4px)}}
 @media(max-width:899px){.quote-grid{grid-template-columns:1fr}}
 
@@ -591,9 +591,9 @@ html:not(.js) .frisbee{display:none}
 <!-- ============ FRISBEE ============ -->
 <div class="frisbee" aria-hidden="true"><div class="fz-tilt"><div class="fz-bob">
   <svg class="fz-spin" viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r="46" fill="#FF5A1F" stroke="#121211" stroke-width="4"/>
+    <circle cx="50" cy="50" r="46" fill="#B31E8D" stroke="#121211" stroke-width="4"/>
     <circle cx="50" cy="50" r="33" fill="none" stroke="#121211" stroke-width="2.5" opacity=".35"/>
-    <circle cx="50" cy="50" r="20" fill="#D7FF45" stroke="#121211" stroke-width="3"/>
+    <circle cx="50" cy="50" r="20" fill="#CAE7DC" stroke="#121211" stroke-width="3"/>
     <path d="M42 41h17M42 50h12M42 59h17" stroke="#121211" stroke-width="4.5" stroke-linecap="round"/>
   </svg>
 </div></div></div>
@@ -777,7 +777,7 @@ html:not(.js) .frisbee{display:none}
   </div>
   <ul class="inc-grid">
     <li class="inc inc-food" data-reveal>
-      <img class="inc-logo" src="assets/img/boali-logo.png" width="551" height="228" alt="Boali" loading="lazy">
+      <img class="inc-logo" src="assets/img/boali-logo-color.png" width="900" height="201" alt="Boali Healthy Food" loading="lazy">
       <h3>Lunch by Boali</h3>
       <p>Big salads and good, healthy food, shared at one long table.</p>
     </li>
@@ -886,7 +886,7 @@ html:not(.js) .frisbee{display:none}
 <!-- ============ FOOD PARTNER ============ -->
 <section class="food" id="food" aria-labelledby="food-title">
   <div class="food-in" data-reveal>
-    <img class="food-logo" src="assets/img/boali-logo.png" width="551" height="228" alt="Boali" loading="lazy">
+    <img class="food-logo" src="assets/img/boali-logo-color.png" width="900" height="201" alt="Boali Healthy Food" loading="lazy">
     <div>
       <span class="kicker">Our food partner</span>
       <h2 class="food-title" id="food-title">Lunch is on <span class="serif">Boali.</span></h2>
