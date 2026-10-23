@@ -472,7 +472,6 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
 .compact-pillars .c-play .pillar-symbol circle{fill:currentColor}
 .compact-pillars .c-nature .pillar-symbol{color:var(--green)}
 .compact-pillars .c-connection .pillar-symbol circle{fill:var(--pink);mix-blend-mode:multiply}
-.pillar-tag{position:absolute;top:22px;right:22px;font-size:.72rem;font-weight:750;text-transform:uppercase;letter-spacing:.06em;background:var(--ink);color:var(--lime);padding:.4em .75em;border-radius:999px;transform:rotate(3deg)}
 .pillar-symbol .mv-a,.pillar-symbol .mv-b,.die,.sun-i,.c-l,.c-r{transform-box:fill-box;transform-origin:50% 50%}
 .pillar-symbol.go .mv-a{animation:g-move .9s var(--out)}
 .pillar-symbol.go .mv-b{animation:g-move .9s var(--out) .12s}
@@ -485,7 +484,7 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
 @keyframes g-rise{40%{transform:translateY(-7px)}75%{transform:translateY(1px)}}
 @keyframes g-hug-l{35%,65%{transform:translateX(6px)}}
 @keyframes g-hug-r{35%,65%{transform:translateX(-6px)}}
-@media(max-width:699px){.compact-pillars .c-play{padding-left:16px;padding-right:16px;border-radius:14px}.pillar-tag{top:14px;right:14px}}
+@media(max-width:699px){.compact-pillars .c-play{padding-left:16px;padding-right:16px;border-radius:14px}}
 
 /* Epic Llama: text beside a photo from one of their events. */
 .partners-in{display:grid;gap:clamp(28px,4vw,56px)}
@@ -646,10 +645,9 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
       <p>Run around, stretch, try something new. No fitness level needed, just trainers.</p>
     </article>
     <article class="card c-play" data-reveal>
-      <span class="pillar-tag">The main event</span>
       <div class="pillar-symbol" aria-hidden="true"><svg viewBox="0 0 80 64"><g class="die"><rect x="19" y="11" width="42" height="42" rx="7"/><circle cx="29" cy="21" r="2"/><circle cx="51" cy="21" r="2"/><circle cx="40" cy="32" r="2"/><circle cx="29" cy="43" r="2"/><circle cx="51" cy="43" r="2"/></g></svg></div>
       <h3>Play</h3>
-      <p>Dodgeball, a team quest, a creative challenge and a crowning at the end. The winners battle it out for a free month at Embody.</p>
+      <p>Team games, friendly competition and full permission to get silly. The kind of play you haven’t done since you were a kid.</p>
     </article>
     <article class="card c-nature" data-reveal style="--d:.1s">
       <div class="pillar-symbol" aria-hidden="true"><svg viewBox="0 0 80 64"><circle class="sun-i" cx="40" cy="22" r="13"/><path d="M8 44h64M18 54h44"/></svg></div>
@@ -690,7 +688,7 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
   <ol class="timeline">
     <li><small>09:30</small><b>Arrive</b><span>Phones in at the door. Say hi and settle in.</span></li>
     <li><small>10:00</small><b>Connect</b><span>Land, breathe, meet your team. Bandanas on, chant invented.</span></li>
-    <li><small>11:00</small><b>Play</b><span>Dodgeball on the field and a quest outdoors. Points count.</span></li>
+    <li><small>11:00</small><b>Play</b><span>Team games and friendly competition. Points count.</span></li>
     <li><small>13:30</small><b>Lunch</b><span>One long table, and lunch by our food partner Boali.</span></li>
     <li><small>14:30</small><b>Create</b><span>A creative team challenge, then the crowning of the winners.</span></li>
     <li><small>16:00</small><b>Unwind</b><span>Ping pong, tea, music. Phones back at 17:30, before the sun goes down.</span></li>
@@ -740,7 +738,7 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
     <li class="inc" style="--ic:var(--orange);--d:.05s" data-reveal>
       <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M12 12c6 6 6 18 0 24M36 12c-6 6-6 18 0 24"/></svg>
       <h3>A full day of play</h3>
-      <p>Dodgeball, a team quest, a creative challenge and a crowning. 10:00 – 17:30.</p>
+      <p>Team games, friendly competition and plenty of silliness. 10:00 – 17:30.</p>
     </li>
     <li class="inc" style="--ic:var(--green);--d:.1s" data-reveal>
       <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40V22L24 10l16 12v18z"/><path d="M19 40V29h10v11"/></svg>
@@ -760,7 +758,7 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
     <li class="inc" style="--ic:var(--orange);--d:.25s" data-reveal>
       <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 5l8 14 8-14"/><circle cx="24" cy="30" r="12"/><path d="M24 24.5l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z"/></svg>
       <h3>Prizes</h3>
-      <p>The winners battle it out for a free month at Embody.</p>
+      <p>Something for the winning team. Bragging rights for everyone else.</p>
     </li>
     <li class="inc" style="--ic:var(--cobalt);--d:.3s" data-reveal>
       <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="5" width="20" height="38" rx="5"/><path d="M20 17h8l-8 9h8M21 37h6"/></svg>
