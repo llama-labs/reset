@@ -533,6 +533,13 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
 .food-title{font-size:clamp(2rem,4.4vw,3.6rem);font-weight:800;font-stretch:75%;line-height:.95;letter-spacing:-.02em;margin:10px 0 12px}
 .food p{font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.45;max-width:46ch;color:rgba(255,255,255,.92)}
 @media(max-width:699px){.food-in{grid-template-columns:1fr;gap:18px}.food-logo{width:140px}}
+/* Frisbee: thrown from "reset." in the hero, flies and spins as you scroll, then fades */
+.frisbee{position:fixed;left:0;top:0;z-index:40;width:clamp(46px,4.6vw,64px);aspect-ratio:1;pointer-events:none;opacity:0;transition:opacity .4s;will-change:transform,opacity}
+html:not(.js) .frisbee{display:none}
+.fz-tilt{width:100%;height:100%;transform:rotate(-12deg) scaleY(.5);filter:drop-shadow(0 14px 6px rgba(18,18,17,.18))}
+.fz-bob{width:100%;height:100%;animation:fzBob 2.8s ease-in-out infinite}
+.fz-spin{display:block;width:100%;height:100%}
+@keyframes fzBob{50%{transform:translateY(-10%)}}
 </style>
 <script>
 (() => {
@@ -567,6 +574,16 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
   </div>
   <button class="intro-skip" type="button">Skip intro</button>
 </div>
+
+<!-- ============ FRISBEE ============ -->
+<div class="frisbee" aria-hidden="true"><div class="fz-tilt"><div class="fz-bob">
+  <svg class="fz-spin" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="46" fill="#FF5A1F" stroke="#121211" stroke-width="4"/>
+    <circle cx="50" cy="50" r="33" fill="none" stroke="#121211" stroke-width="2.5" opacity=".35"/>
+    <circle cx="50" cy="50" r="20" fill="#D7FF45" stroke="#121211" stroke-width="3"/>
+    <path d="M42 41h17M42 50h12M42 59h17" stroke="#121211" stroke-width="4.5" stroke-linecap="round"/>
+  </svg>
+</div></div></div>
 
 <!-- ============ NAV ============ -->
 <header class="nav">
@@ -1067,6 +1084,36 @@ html.entered .reset-word{animation:resetSettle .85s ease-in-out 1.5s both}
   };
   addEventListener('scroll', () => { if (!tlQueued) { tlQueued = true; requestAnimationFrame(updTL); } }, { passive: true });
   updTL();
+
+  /* ---------- frisbee: thrown from "reset." and carried along by the scroll ---------- */
+  const fz = $('.frisbee'), spin = $('.fz-spin', fz), word = $('.reset-word');
+  let from = null, fzQueued = false;
+  const measureFz = () => {
+    const r = word.getBoundingClientRect(), size = fz.offsetWidth;
+    from = { x: r.right + size * .2, y: r.top + scrollY + r.height * .2 }; // where it rests at the top of the page
+  };
+  const curve = (p, a, b, c) => (1 - p) * (1 - p) * a + 2 * (1 - p) * p * b + p * p * c;
+  const flyFz = () => {
+    fzQueued = false;
+    if (!from || !root.classList.contains('entered')) return;
+    const w = innerWidth, h = innerHeight, size = fz.offsetWidth;
+    const p = Math.min(1, scrollY / (h * 1.15));                 // done after about one screen of scrolling
+    const x = curve(p, from.x, w * .62, w * .88);
+    const y = curve(p, from.y - scrollY * .15, h * .02, h * .62);   // up in an arc, then drifting down
+    const scale = .85 + p * .45;
+    fz.style.transform = `translate(${x - size / 2}px, ${y - size / 2}px) scale(${scale})`;
+    fz.style.opacity = p < .7 ? 1 : Math.max(0, 1 - (p - .7) / .3);
+    fz.style.visibility = p >= 1 ? 'hidden' : 'visible';
+    spin.style.transform = `rotate(${scrollY * 1.4}deg)`;
+  };
+  if (reduce) fz.remove();
+  else {
+    const ready = () => { measureFz(); flyFz(); };
+    // wait for the headline to finish sliding in before picking up the frisbee's starting spot
+    setTimeout(function check() { root.classList.contains('entered') ? setTimeout(ready, 1300) : setTimeout(check, 200); }, 200);
+    addEventListener('scroll', () => { if (!fzQueued) { fzQueued = true; requestAnimationFrame(flyFz); } }, { passive: true });
+    addEventListener('resize', () => { measureFz(); flyFz(); });
+  }
 
   /* ---------- pillars: the icons take turns doing their little gesture ---------- */
   const symbols = $$('.pillar-symbol');
