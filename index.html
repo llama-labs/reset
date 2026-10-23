@@ -45,6 +45,8 @@ html.intro-on{overflow:hidden}
 }
 .btn:active{transform:scale(.94)}
 .btn-sm{font-size:.92rem;padding:.65em 1.1em}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.from{flex-basis:100%}
 .kicker{display:inline-flex;align-items:center;gap:.5em;font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.08em}
 .kicker::before{content:"";width:.7em;height:.7em;border-radius:50%;background:var(--orange)}
 .h2{font-size:clamp(2.4rem,6vw,5.6rem);font-weight:800;font-stretch:75%;line-height:.92;letter-spacing:-.02em;margin-top:14px}
@@ -310,19 +312,6 @@ html.js .stack{transition:transform 1s var(--spring) .55s,opacity .5s .55s}
 .pl-llama{font-weight:800;font-stretch:75%;font-size:clamp(1.7rem,3vw,2.6rem);text-transform:uppercase;line-height:1}
 
 /* ---------- final ---------- */
-.final{position:relative;overflow:hidden;text-align:center;padding:clamp(110px,14vw,210px) var(--pad) clamp(220px,26vw,360px)}
-.final-line{font-size:clamp(2.5rem,6.6vw,6.8rem);font-weight:800;font-stretch:75%;line-height:.95;letter-spacing:-.02em;max-width:13.5em;margin:0 auto}
-.final-line .x{position:relative;color:rgba(18,18,17,.32)}
-.final-line .x::after{content:"";position:absolute;left:-3%;right:-3%;top:52%;height:.09em;background:var(--orange);border-radius:9px;transform:scaleX(0) rotate(-2deg);transform-origin:0 50%;transition:transform .7s var(--out) .5s}
-.final-line.in .x::after{transform:scaleX(1) rotate(-2deg)}
-.final-line .serif{color:var(--orange);font-size:1.1em;letter-spacing:-.01em}
-.peek{position:absolute;bottom:0;height:clamp(240px,27vw,400px);width:auto;transition:transform .8s var(--spring);filter:drop-shadow(0 10px 16px rgba(18,18,17,.18))}
-.peek-l{left:4%;transform:translateY(80%) rotate(12deg)}
-.peek-r{right:6%;transform:translateY(80%) rotate(-12deg)}
-.final.in .peek-l{transform:translateY(34%) rotate(7deg)}
-.final.in .peek-r{transform:translateY(34%) rotate(-7deg)}
-.final.in:hover .peek-l{transform:translateY(14%) rotate(3deg)}
-.final.in:hover .peek-r{transform:translateY(14%) rotate(-3deg)}
 
 /* ---------- footer ---------- */
 .foot{background:var(--orange);color:var(--ink);padding:clamp(44px,6vw,84px) var(--pad) max(26px,env(safe-area-inset-bottom))}
@@ -374,8 +363,6 @@ html.js .stack{transition:transform 1s var(--spring) .55s,opacity .5s .55s}
   .nav-logo{width:80px}
   .nav-brand{gap:7px}
   .nav-brand .reset-tag{font-size:1.05rem}
-  .peek{height:200px}
-  .peek-l{left:-4%} .peek-r{right:-2%}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
@@ -540,6 +527,31 @@ html:not(.js) .frisbee{display:none}
 .fz-bob{width:100%;height:100%;animation:fzBob 2.8s ease-in-out infinite}
 .fz-spin{display:block;width:100%;height:100%}
 @keyframes fzBob{50%{transform:translateY(-10%)}}
+/* Hosts intro about Embody */
+.hosts-intro{max-width:62ch;font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.5;margin:-16px 0 34px;color:#3d3d38}
+
+/* Quotes from past Epic Llama days */
+.quotes{padding:clamp(70px,9vw,120px) var(--pad) clamp(40px,5vw,70px)}
+.quote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:clamp(28px,4vw,48px)}
+.q{margin:0;border-radius:22px;padding:clamp(24px,2.6vw,34px);display:flex;flex-direction:column;justify-content:space-between;gap:20px;transition:transform .5s var(--spring)}
+.q p{font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,2vw,1.75rem);line-height:1.2}
+.q cite{font-style:normal;font-weight:700;font-size:.9rem}
+.q-lime{background:var(--lime);transform:rotate(-1.2deg)}
+.q-pink{background:var(--pink);transform:rotate(1deg)}
+.q-cobalt{background:var(--cobalt);color:var(--white);transform:rotate(-.6deg)}
+@media (hover:hover){.q:hover{transform:rotate(0) translateY(-4px)}}
+@media(max-width:899px){.quote-grid{grid-template-columns:1fr}}
+
+/* Ending */
+.ending{text-align:center;padding:clamp(90px,12vw,170px) var(--pad) clamp(80px,10vw,140px)}
+.ending .kicker{justify-content:center}
+.ending-line{font-size:clamp(2.4rem,6.4vw,6.4rem);font-weight:800;font-stretch:75%;line-height:.95;letter-spacing:-.02em;max-width:13.5em;margin:22px auto 0}
+.ending-line .x{position:relative;color:rgba(18,18,17,.32)}
+.ending-line .x::after{content:"";position:absolute;left:-3%;right:-3%;top:52%;height:.09em;background:var(--orange);border-radius:9px;transform:scaleX(0) rotate(-2deg);transform-origin:0 50%;transition:transform .7s var(--out) .5s}
+.ending-line.in .x::after{transform:scaleX(1) rotate(-2deg)}
+.ending-line .serif{color:var(--orange);font-size:1.08em;letter-spacing:-.01em}
+.ending-cta{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:clamp(30px,4vw,48px)}
+.ending-cta .btn{font-size:clamp(1.05rem,1.6vw,1.25rem);padding:1em 1.8em}
 </style>
 <script>
 (() => {
@@ -600,7 +612,7 @@ html:not(.js) .frisbee{display:none}
   <div class="hero-grid">
   <div class="hero-text">
   <div class="chips" data-hero style="--d:.5s">
-    <span class="chip chip-reset">RESET · Edition 01</span><span class="chip">Sun 08.11.2026</span><span class="chip">Full-day experience</span><span class="chip chip-ink">Phones off</span>
+    <span class="chip chip-reset">RESET · Edition 01</span><span class="chip">Sun 08.11.2026</span><span class="chip">Full-day experience</span><span class="chip">30 spots</span><span class="chip chip-ink">Phones off</span>
   </div>
   <h1 class="hero-title" aria-label="A day to move. To play. To reset.">
     <span class="line"><span class="li" style="--i:0">A day to <em class="w-body">move.</em></span></span>
@@ -612,9 +624,10 @@ html:not(.js) .frisbee{display:none}
       <p class="lede" data-hero style="--d:.75s">About 50 km from Lisbon there’s a beautiful villa. For one Sunday it’s ours: a phone-free day of play, movement and connection with like-hearted humans.</p>
       <p class="byline" data-hero style="--d:.85s">By <b>Embody</b>. Co-created with <b>Epic Llama</b>.</p>
       <div class="cta-row" data-hero style="--d:.95s">
-        <a class="btn" href="#day">Explore the day
+        <a class="btn" data-luma-action="checkout" data-luma-event-id="evt-A7u6280tRCXARKp" href="https://luma.com/k28wjufk" target="_blank" rel="noopener">Get tickets
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <a class="btn btn-ghost" href="#day">Explore the day</a>
         <span class="from">€75 for Embody members, €85 for new friends. Food &amp; activities included.</span>
       </div>
     </div>
@@ -717,6 +730,7 @@ html:not(.js) .frisbee{display:none}
 <section class="hosts" id="hosts" aria-labelledby="hosts-title">
   <div class="hosts-inner">
     <h2 class="hosts-title" id="hosts-title">Your hosts</h2>
+    <p class="hosts-intro">RESET is made by <b>Embody</b>, a community gym in Lisbon where classes are small, everyone knows your name and play is one of the core values. It started with members asking to do more together: hikes, birthday days, long lunches. RESET is the next step.</p>
     <div class="hosts-grid">
       <article class="host-card">
         <img class="host-photo" src="assets/img/elise-host.webp" alt="Elise, fists in the air, laughing" width="1000" height="924" style="object-position:50% 30%" loading="lazy">
@@ -737,6 +751,19 @@ html:not(.js) .frisbee{display:none}
         <p class="host-bio">Mindfulness, yoga and 5Rhythms® teacher and mental health advisor. For over a decade she’s helped people through stress and change, by learning to listen to themselves.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ============ QUOTES ============ -->
+<section class="quotes" id="quotes" aria-labelledby="quotes-title">
+  <div class="sec-head" data-reveal>
+    <span class="kicker">From past Epic Llama days</span>
+    <h2 class="h2" id="quotes-title">Strangers in the morning. <span class="serif">Friends by lunch.</span></h2>
+  </div>
+  <div class="quote-grid">
+    <blockquote class="q q-lime" data-reveal><p>“It’s like being a kid again, when you were at the park, playing with other kids, and just decided you were going to be best friends for the next hours.”</p><cite>Sara · Google review</cite></blockquote>
+    <blockquote class="q q-pink" data-reveal style="--d:.08s"><p>“Everyone let their guards down and played like the big kids we are!”</p><cite>Past guest</cite></blockquote>
+    <blockquote class="q q-cobalt" data-reveal style="--d:.16s"><p>“There were no awkward moments, thanks to the structure and small games. Best human connection event of the year for me.”</p><cite>Past guest</cite></blockquote>
   </div>
 </section>
 
@@ -817,7 +844,7 @@ html:not(.js) .frisbee{display:none}
       <a class="btn" id="book" data-luma-action="checkout" data-luma-event-id="evt-A7u6280tRCXARKp" href="https://luma.com/k28wjufk" target="_blank" rel="noopener"><span>Get your ticket</span>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <p class="claim-note">Food and all activities included.</p>
+      <p class="claim-note">Only 30 spots, small on purpose. Food and all activities included.</p>
     </div>
   </div>
 </section>
@@ -830,9 +857,13 @@ html:not(.js) .frisbee{display:none}
   </div>
   <div class="faq-list" data-reveal>
     <details open><summary>What exactly is RESET?</summary><p>A full day out of the city with a small group: games, team challenges, movement and facilitated sessions, a long lunch together and time to slow down. Think adult playground meets a day in nature.</p></details>
+    <details><summary>Can I come alone?</summary><p>Yes, and most people do. That’s kind of the point: you’ll leave knowing a lot more people than you arrived with.</p></details>
     <details><summary>Do I need to be fit?</summary><p>Not really. Everything is designed so anyone can join in, at their own pace. If you’re up for moving and laughing, you’re good.</p></details>
     <details><summary>Is this a workout?</summary><p>Not really. You might break a sweat, but it’s definitely not a bootcamp. Play comes first.</p></details>
     <details><summary>Will my phone be taken away?</summary><p>Yes, in the nicest way. There’s a little phone handover ceremony when you arrive, and you get it back at the end of the day. A proper day to disconnect.</p></details>
+    <details><summary>What should I bring?</summary><p>Trainers, comfortable clothes you can move in, a few layers (it’s November) and a water bottle. We’ll take care of the rest.</p></details>
+    <details><summary>How do I get there?</summary><p>Quinta da Pedra Firme is in Colares, about 50 km from Lisbon and easy by Uber. Before the day we’ll set up a WhatsApp group so you can share rides with other guests.</p></details>
+    <details><summary>What if it rains?</summary><p>In case of bad weather, the event will be cancelled and everyone gets a full refund.</p></details>
     <details><summary>Why are we doing this?</summary><p>City life can be intense. We believe the truest medicine for our nervous system is simple: switching off, being in good company and spending time in nature. We want more of that in our lives, and in yours. This is our first edition, and we’re really excited. If it works, we’d love to run a few RESET days throughout next year.</p></details>
   </div>
 </section>
@@ -859,6 +890,17 @@ html:not(.js) .frisbee{display:none}
       <h2 class="food-title" id="food-title">Lunch is on <span class="serif">Boali.</span></h2>
       <p>Big salads and good, healthy food, made for sharing at one long table. Thank you, Boali, for feeding RESET.</p>
     </div>
+  </div>
+</section>
+<!-- ============ ENDING ============ -->
+<section class="ending" aria-labelledby="ending-title">
+  <p class="kicker" data-reveal>RESET · Sunday 8 November · 30 spots</p>
+  <h2 class="ending-line" id="ending-title" data-reveal>People shouldn’t simply <span class="x">attend</span> Embody. They should <span class="serif">feel part of it.</span></h2>
+  <div class="ending-cta" data-reveal style="--d:.1s">
+    <a class="btn" data-luma-action="checkout" data-luma-event-id="evt-A7u6280tRCXARKp" href="https://luma.com/k28wjufk" target="_blank" rel="noopener">Save me a spot
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <p class="from">See you on the lawn.</p>
   </div>
 </section>
 </main>
